@@ -1,0 +1,55 @@
+Complaint Form Structures (Black Russia Forum):
+
+1. Complaints against players (Жалобы на игроков):
+   - Title: NickName | Reason (e.g., Ivan_Ivanov | DM)
+   - Content:
+     1. Ваш Nick_Name:
+     2. Nick_Name игрока:
+     3. Суть жалобы:
+     4. Доказательство:
+
+2. Complaints against leaders (Жалобы на лидеров):
+   - Title: NickName | Организация | Reason
+   - Content:
+     1. Ваш Nick_Name:
+     2. Nick_Name лидера:
+     3. Организация:
+     4. Суть жалобы:
+     5. Доказательство:
+
+3. Complaints against administration (Жалобы на администрацию):
+   - Title: NickName | Reason
+   - Content:
+     1. Ваш Nick_Name:
+     2. Nick_Name администратора:
+     3. Дата выдачи/получения наказания:
+     4. Суть жалобы:
+     5. Доказательство:
+
+4. Appeal of punishment (Обжалование наказаний):
+   - Title: NickName | Reason
+   - Content:
+     1. Ваш Nick_Name:
+     2. Nick_Name администратора:
+     3. Дата выдачи/получения наказания:
+     4. Суть заявки:
+     5. Доказательство:
+
+5. Leader/Admin Application (Заявки на лидера/админа):
+   - Title: Заявление на пост Лидера [Организация] | NickName
+   - Content: (Based on screenshots, typically includes IC and OOC info)
+     IC Information:
+     - Ваш Nick_Name:
+     - Ваш игровой уровень:
+     - Скриншот статистики:
+     - Почему именно вы:
+     OOC Information:
+     - Ваше имя:
+     - Ваш возраст:
+     - Ваш часовой пояс:
+     - Ваш Discord:
+     - Ваш VK:
+
+Note: The forum uses XenForo. Posting involves a POST request to /forums/[forum-id]/post-thread.
+The user provided 91 servers. The bot needs to map server names to their respective forum IDs.
+All servers follow a similar subforum structure under the "Игровые сервера" category.
