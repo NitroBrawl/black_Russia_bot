@@ -9,7 +9,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(level
 logger = logging.getLogger(__name__)
 
 # Bot Token
-TOKEN = '8792808889:AAE1BJ5EllwaI-0JboBiYhfCz8YFL1HfQ-k'
+TOKEN = '8792808889:AAEpIkSUKtBxaGRnoVSLVW31o5ZDtaMJ4YE'
 bot = TeleBot(TOKEN)
 
 # Use relative path for the server list
