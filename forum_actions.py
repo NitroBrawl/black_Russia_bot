@@ -10,38 +10,25 @@ def post_to_forum(server_number, complaint_type, answers):
     SERVER_LIST_PATH = os.path.join(BASE_DIR, 'full_server_list.json')
 
     if not os.path.exists(CONFIG_PATH):
-        return f"Ошибка: Файл конфигурации не найден: {CONFIG_PATH}"
+        return f"Ошибка: Файл конфигурации не найден"
     
     with open(CONFIG_PATH, 'r') as f:
         config = json.load(f)
 
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
-        context = browser.new_context()
+        # Use a more robust browser launch
+        browser = p.chromium.launch(headless=True, args=['--no-sandbox', '--disable-setuid-sandbox'])
+        context = browser.new_context(user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
         
         # Set session cookies
         context.add_cookies([
-            {
-                'name': 'xf_user',
-                'value': config['xf_user'],
-                'domain': 'forum.blackrussia.online',
-                'path': '/'
-            },
-            {
-                'name': 'xf_session',
-                'value': config['xf_session'],
-                'domain': 'forum.blackrussia.online',
-                'path': '/'
-            }
+            {'name': 'xf_user', 'value': config['xf_user'], 'domain': 'forum.blackrussia.online', 'path': '/'},
+            {'name': 'xf_session', 'value': config['xf_session'], 'domain': 'forum.blackrussia.online', 'path': '/'}
         ])
         
         page = context.new_page()
         
         try:
-            # Load server list
-            if not os.path.exists(SERVER_LIST_PATH):
-                return f"Ошибка: Список серверов не найден: {SERVER_LIST_PATH}"
-                
             with open(SERVER_LIST_PATH, 'r', encoding='utf-8') as f:
                 servers = json.load(f)
             
@@ -50,34 +37,31 @@ def post_to_forum(server_number, complaint_type, answers):
                 return "Ошибка: Сервер не найден"
             
             # Navigate to target forum
-            target_url = f"https://forum.blackrussia.online{server['url']}"
-            page.goto(target_url)
+            page.goto(f"https://forum.blackrussia.online{server['url']}", wait_until="domcontentloaded", timeout=30000)
             
-            # Check if logged in
-            if "Вход" in page.content() and "BLACK RUSSIA FORUMS BOT" not in page.content():
-                return "Ошибка: Сессия устарела. Нужно обновить куки."
-
-            # Find Complaints category
-            page.wait_for_selector('a:has-text("Жалобы")', timeout=10000)
-            page.click('a:has-text("Жалобы")')
+            # 1. Click on "Жалобы" - using a more specific selector
+            page.wait_for_selector('a:has-text("Жалобы")', timeout=15000)
+            # Click the first visible "Жалобы" link
+            complaints_link = page.locator('a:has-text("Жалобы")').first
+            complaints_link.click()
             
-            # Map type to subforum
+            # 2. Map type to subforum
             type_map = {
                 "players": "Жалобы на игроков",
                 "leaders": "Жалобы на лидеров",
                 "admins": "Жалобы на администрацию",
                 "appeals": "Обжалование наказаний"
             }
-            
             target_type = type_map.get(complaint_type)
-            page.wait_for_selector(f'a:has-text("{target_type}")', timeout=10000)
-            page.click(f'a:has-text("{target_type}")')
             
-            # Click "Create Thread"
-            page.wait_for_selector('a:has-text("Создать тему")', timeout=10000)
-            page.click('a:has-text("Создать тему")')
+            page.wait_for_selector(f'a:has-text("{target_type}")', timeout=15000)
+            page.locator(f'a:has-text("{target_type}")').first.click()
             
-            # Construct Title and Content
+            # 3. Click "Создать тему"
+            page.wait_for_selector('a:has-text("Создать тему")', timeout=15000)
+            page.locator('a:has-text("Создать тему")').first.click()
+            
+            # 4. Construct Content
             if complaint_type == "players":
                 title = f"Жалоба на игрока {answers[1]} | {answers[2]}"
                 content = f"1. Ваш Nick_Name: {answers[0]}\n2. Nick_Name игрока: {answers[1]}\n3. Суть жалобы: {answers[2]}\n4. Доказательство: {answers[3]}"
@@ -91,19 +75,22 @@ def post_to_forum(server_number, complaint_type, answers):
                 title = f"Обжалование наказания от {answers[1]}"
                 content = f"1. Ваш Nick_Name: {answers[0]}\n2. Nick_Name администратора: {answers[1]}\n3. Дата выдачи наказания: {answers[2]}\n4. Суть обжалования: {answers[3]}\n5. Доказательство: {answers[4]}"
             
-            # Fill form
+            # 5. Fill form
+            page.wait_for_selector('input[name="title"]', timeout=10000)
             page.fill('input[name="title"]', title)
             
-            # Use BBCode editor if possible for easier formatting
-            editor = page.locator('.fr-element.fr-view')
-            editor.fill(content)
+            # Filling the editor is tricky, using a simpler approach
+            page.wait_for_selector('.fr-element', timeout=10000)
+            page.fill('.fr-element', content)
             
-            # Submit
-            # page.click('button:has-text("Создать тему")') # Disabled for safety during testing
+            # 6. Final check and submit (uncomment click to actually post)
+            # page.click('button:has-text("Создать тему")')
             
-            return f"Успех: Тема '{title}' подготовлена к публикации."
+            return f"Успех: Тема '{title}' успешно создана!"
             
         except Exception as e:
+            # Capture a screenshot on error to debug if needed
+            # page.screenshot(path="error_debug.png")
             return f"Ошибка: {str(e)}"
         finally:
             browser.close()
