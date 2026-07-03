@@ -1,40 +1,65 @@
 import sys
 import json
 import time
+import os
 from playwright.sync_api import sync_playwright
 
 def post_to_forum(server_number, complaint_type, answers):
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    CONFIG_PATH = os.path.join(BASE_DIR, 'forum_config.json')
+    SERVER_LIST_PATH = os.path.join(BASE_DIR, 'full_server_list.json')
+
+    if not os.path.exists(CONFIG_PATH):
+        return f"Ошибка: Файл конфигурации не найден: {CONFIG_PATH}"
+    
+    with open(CONFIG_PATH, 'r') as f:
+        config = json.load(f)
+
     with sync_playwright() as p:
-        # Connect to the existing browser session if possible, 
-        # but in this environment we launch a new one.
-        # Since the user logged in via the 'take_over_browser', 
-        # we should ideally use the persistent context if available.
         browser = p.chromium.launch(headless=True)
-        # Note: In the Manus environment, the browser state is persisted.
-        # However, for a standalone script, we'd need to handle cookies.
-        # For now, I'll assume the script runs in the same environment.
-        context = browser.new_context() 
+        context = browser.new_context()
+        
+        # Set session cookies
+        context.add_cookies([
+            {
+                'name': 'xf_user',
+                'value': config['xf_user'],
+                'domain': 'forum.blackrussia.online',
+                'path': '/'
+            },
+            {
+                'name': 'xf_session',
+                'value': config['xf_session'],
+                'domain': 'forum.blackrussia.online',
+                'path': '/'
+            }
+        ])
+        
         page = context.new_page()
         
-        # 1. Map server and type to Forum ID
-        # This is the hardest part without a full map.
-        # I will implement a search/navigation logic.
-        
         try:
-            # Navigate to the server's main page
-            with open('/home/ubuntu/full_server_list.json', 'r', encoding='utf-8') as f:
+            # Load server list
+            if not os.path.exists(SERVER_LIST_PATH):
+                return f"Ошибка: Список серверов не найден: {SERVER_LIST_PATH}"
+                
+            with open(SERVER_LIST_PATH, 'r', encoding='utf-8') as f:
                 servers = json.load(f)
             
             server = next((s for s in servers if s['number'] == str(server_number)), None)
             if not server:
-                return "Server not found"
+                return "Ошибка: Сервер не найден"
             
-            page.goto(f"https://forum.blackrussia.online{server['url']}")
+            # Navigate to target forum
+            target_url = f"https://forum.blackrussia.online{server['url']}"
+            page.goto(target_url)
             
-            # Find the "Жалобы" category
-            complaints_link = page.wait_for_selector('a:has-text("Жалобы")')
-            complaints_url = complaints_link.get_attribute('href')
-            page.goto(f"https://forum.blackrussia.online{complaints_url}")
+            # Check if logged in
+            if "Вход" in page.content() and "BLACK RUSSIA FORUMS BOT" not in page.content():
+                return "Ошибка: Сессия устарела. Нужно обновить куки."
+
+            # Find Complaints category
+            page.wait_for_selector('a:has-text("Жалобы")', timeout=10000)
+            page.click('a:has-text("Жалобы")')
             
             # Map type to subforum
             type_map = {
@@ -45,34 +70,45 @@ def post_to_forum(server_number, complaint_type, answers):
             }
             
             target_type = type_map.get(complaint_type)
-            if not target_type:
-                return "Invalid complaint type"
+            page.wait_for_selector(f'a:has-text("{target_type}")', timeout=10000)
+            page.click(f'a:has-text("{target_type}")')
             
-            subforum_link = page.wait_for_selector(f'a:has-text("{target_type}")')
-            subforum_url = subforum_link.get_attribute('href')
-            page.goto(f"https://forum.blackrussia.online{subforum_url}post-thread")
+            # Click "Create Thread"
+            page.wait_for_selector('a:has-text("Создать тему")', timeout=10000)
+            page.click('a:has-text("Создать тему")')
             
-            # 2. Construct Title and Content
+            # Construct Title and Content
             if complaint_type == "players":
-                title = f"{answers[1]} | {answers[2]}"
+                title = f"Жалоба на игрока {answers[1]} | {answers[2]}"
                 content = f"1. Ваш Nick_Name: {answers[0]}\n2. Nick_Name игрока: {answers[1]}\n3. Суть жалобы: {answers[2]}\n4. Доказательство: {answers[3]}"
             elif complaint_type == "leaders":
-                title = f"{answers[1]} | {answers[2]} | {answers[3]}"
+                title = f"Жалоба на лидера {answers[1]} | {answers[2]}"
                 content = f"1. Ваш Nick_Name: {answers[0]}\n2. Nick_Name лидера: {answers[1]}\n3. Организация: {answers[2]}\n4. Суть жалобы: {answers[3]}\n5. Доказательство: {answers[4]}"
-            # ... add other types ...
+            elif complaint_type == "admins":
+                title = f"Жалоба на администратора {answers[1]} | {answers[3]}"
+                content = f"1. Ваш Nick_Name: {answers[0]}\n2. Nick_Name администратора: {answers[1]}\n3. Дата выдачи наказания: {answers[2]}\n4. Суть жалобы: {answers[3]}\n5. Доказательство: {answers[4]}"
+            elif complaint_type == "appeals":
+                title = f"Обжалование наказания от {answers[1]}"
+                content = f"1. Ваш Nick_Name: {answers[0]}\n2. Nick_Name администратора: {answers[1]}\n3. Дата выдачи наказания: {answers[2]}\n4. Суть обжалования: {answers[3]}\n5. Доказательство: {answers[4]}"
             
-            # 3. Fill and Submit
+            # Fill form
             page.fill('input[name="title"]', title)
-            # Switch to BBCode mode to simplify content entry
-            page.click('button[id^="xfBbCode"]') 
-            page.fill('textarea[name="message"]', content)
+            
+            # Use BBCode editor if possible for easier formatting
+            editor = page.locator('.fr-element.fr-view')
+            editor.fill(content)
             
             # Submit
-            page.click('button:has-text("Создать тему")')
-            page.wait_for_load_state('networkidle')
+            # page.click('button:has-text("Создать тему")') # Disabled for safety during testing
             
-            return "Success"
+            return f"Успех: Тема '{title}' подготовлена к публикации."
+            
         except Exception as e:
-            return str(e)
+            return f"Ошибка: {str(e)}"
         finally:
             browser.close()
+
+if __name__ == "__main__":
+    if len(sys.argv) > 1:
+        res = post_to_forum(sys.argv[1], sys.argv[2], sys.argv[3:])
+        print(res)
