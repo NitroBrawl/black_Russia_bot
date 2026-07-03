@@ -12,9 +12,17 @@ logger = logging.getLogger(__name__)
 TOKEN = '8792808889:AAE1BJ5EllwaI-0JboBiYhfCz8YFL1HfQ-k'
 bot = TeleBot(TOKEN)
 
+# Use relative path for the server list
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+SERVER_LIST_PATH = os.path.join(BASE_DIR, 'full_server_list.json')
+
 # Load server list
-with open('/home/ubuntu/full_server_list.json', 'r', encoding='utf-8') as f:
-    SERVERS = json.load(f)
+try:
+    with open(SERVER_LIST_PATH, 'r', encoding='utf-8') as f:
+        SERVERS = json.load(f)
+except FileNotFoundError:
+    logger.error(f"File not found: {SERVER_LIST_PATH}")
+    SERVERS = []
 
 # User state storage
 user_data = {}
@@ -41,6 +49,10 @@ def start(message):
 
 @bot.message_handler(func=lambda message: message.text == "Подать жалобу")
 def choose_server(message):
+    if not SERVERS:
+        bot.send_message(message.chat.id, "Ошибка: Список серверов не загружен. Проверьте наличие файла full_server_list.json.")
+        return
+        
     markup = types.InlineKeyboardMarkup(row_width=5)
     buttons = [types.InlineKeyboardButton(f"{s['number']}", callback_data=f"srv_{s['number']}") for s in SERVERS]
     markup.add(*buttons)
