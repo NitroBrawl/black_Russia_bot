@@ -1,0 +1,548 @@
+[
+    {
+        "number": "1",
+        "name": "RED",
+        "id": "18",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%961-red.18/"
+    },
+    {
+        "number": "2",
+        "name": "GREEN",
+        "id": "19",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%962-green.19/"
+    },
+    {
+        "number": "3",
+        "name": "BLUE",
+        "id": "133",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%963-blue.133/"
+    },
+    {
+        "number": "4",
+        "name": "YELLOW",
+        "id": "169",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%964-yellow.169/"
+    },
+    {
+        "number": "5",
+        "name": "ORANGE",
+        "id": "246",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%965-orange.246/"
+    },
+    {
+        "number": "6",
+        "name": "PURPLE",
+        "id": "286",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%966-purple.286/"
+    },
+    {
+        "number": "7",
+        "name": "LIME",
+        "id": "326",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%967-lime.326/"
+    },
+    {
+        "number": "8",
+        "name": "PINK",
+        "id": "368",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%968-pink.368/"
+    },
+    {
+        "number": "9",
+        "name": "CHERRY",
+        "id": "409",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%969-cherry.409/"
+    },
+    {
+        "number": "10",
+        "name": "BLACK",
+        "id": "449",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9610-black.449/"
+    },
+    {
+        "number": "11",
+        "name": "INDIGO",
+        "id": "492",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9611-indigo.492/"
+    },
+    {
+        "number": "12",
+        "name": "WHITE",
+        "id": "532",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9612-white.532/"
+    },
+    {
+        "number": "13",
+        "name": "MAGENTA",
+        "id": "573",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9613-magenta.573/"
+    },
+    {
+        "number": "14",
+        "name": "CRIMSON",
+        "id": "614",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9614-crimson.614/"
+    },
+    {
+        "number": "15",
+        "name": "GOLD",
+        "id": "661",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9615-gold.661/"
+    },
+    {
+        "number": "16",
+        "name": "AZURE",
+        "id": "702",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9616-azure.702/"
+    },
+    {
+        "number": "17",
+        "name": "PLATINUM",
+        "id": "758",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9617-platinum.758/"
+    },
+    {
+        "number": "18",
+        "name": "AQUA",
+        "id": "817",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9618-aqua.817/"
+    },
+    {
+        "number": "19",
+        "name": "GRAY",
+        "id": "858",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9619-gray.858/"
+    },
+    {
+        "number": "20",
+        "name": "ICE",
+        "id": "927",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9620-ice.927/"
+    },
+    {
+        "number": "21",
+        "name": "CHILLI",
+        "id": "967",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9621-chilli.967/"
+    },
+    {
+        "number": "22",
+        "name": "CHOCO",
+        "id": "1009",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9622-choco.1009/"
+    },
+    {
+        "number": "23",
+        "name": "MOSCOW",
+        "id": "1055",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9623-moscow.1055/"
+    },
+    {
+        "number": "24",
+        "name": "SPB",
+        "id": "1097",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9624-spb.1097/"
+    },
+    {
+        "number": "25",
+        "name": "UFA",
+        "id": "1140",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9625-ufa.1140/"
+    },
+    {
+        "number": "26",
+        "name": "SOCHI",
+        "id": "1207",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9626-sochi.1207/"
+    },
+    {
+        "number": "27",
+        "name": "KAZAN",
+        "id": "1249",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9627-kazan.1249/"
+    },
+    {
+        "number": "28",
+        "name": "SAMARA",
+        "id": "1293",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9628-samara.1293/"
+    },
+    {
+        "number": "29",
+        "name": "ROSTOV",
+        "id": "1335",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9629-rostov.1335/"
+    },
+    {
+        "number": "30",
+        "name": "ANAPA",
+        "id": "1375",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9630-anapa.1375/"
+    },
+    {
+        "number": "31",
+        "name": "EKB",
+        "id": "1417",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9631-ekb.1417/"
+    },
+    {
+        "number": "32",
+        "name": "KRASNODAR",
+        "id": "1461",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9632-krasnodar.1461/"
+    },
+    {
+        "number": "33",
+        "name": "ARZAMAS",
+        "id": "1503",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9633-arzamas.1503/"
+    },
+    {
+        "number": "34",
+        "name": "NOVOSIBIRSK",
+        "id": "1545",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9634-novosibirsk.1545/"
+    },
+    {
+        "number": "35",
+        "name": "GROZNY",
+        "id": "1587",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9635-grozny.1587/"
+    },
+    {
+        "number": "36",
+        "name": "SARATOV",
+        "id": "1629",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9636-saratov.1629/"
+    },
+    {
+        "number": "37",
+        "name": "OMSK",
+        "id": "1671",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9637-omsk.1671/"
+    },
+    {
+        "number": "38",
+        "name": "IRKUTSK",
+        "id": "1713",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9638-irkutsk.1713/"
+    },
+    {
+        "number": "39",
+        "name": "VOLGOGRAD",
+        "id": "1759",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9639-volgograd.1759/"
+    },
+    {
+        "number": "40",
+        "name": "VORONEZH",
+        "id": "1801",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9640-voronezh.1801/"
+    },
+    {
+        "number": "41",
+        "name": "BELGOROD",
+        "id": "1843",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9641-belgorod.1843/"
+    },
+    {
+        "number": "42",
+        "name": "MAKHACHKALA",
+        "id": "1885",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9642-makhachkala.1885/"
+    },
+    {
+        "number": "43",
+        "name": "VLADIKAVKAZ",
+        "id": "1927",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9643-vladikavkaz.1927/"
+    },
+    {
+        "number": "44",
+        "name": "VLADIVOSTOK",
+        "id": "1969",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9644-vladivostok.1969/"
+    },
+    {
+        "number": "45",
+        "name": "KALININGRAD",
+        "id": "2011",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9645-kaliningrad.2011/"
+    },
+    {
+        "number": "46",
+        "name": "CHELYABINSK",
+        "id": "2053",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9646-chelyabinsk.2053/"
+    },
+    {
+        "number": "47",
+        "name": "KRASNOYARSK",
+        "id": "2095",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9647-krasnoyarsk.2095/"
+    },
+    {
+        "number": "48",
+        "name": "CHEBOKSARY",
+        "id": "2137",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9648-cheboksary.2137/"
+    },
+    {
+        "number": "49",
+        "name": "KHABAROVSK",
+        "id": "2179",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9649-khabarovsk.2179/"
+    },
+    {
+        "number": "50",
+        "name": "PERM",
+        "id": "2221",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9650-perm.2221/"
+    },
+    {
+        "number": "51",
+        "name": "TULA",
+        "id": "2263",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9651-tula.2263/"
+    },
+    {
+        "number": "52",
+        "name": "RYAZAN",
+        "id": "2305",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9652-ryazan.2305/"
+    },
+    {
+        "number": "53",
+        "name": "MURMANSK",
+        "id": "2347",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9653-murmansk.2347/"
+    },
+    {
+        "number": "54",
+        "name": "PENZA",
+        "id": "2389",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9654-penza.2389/"
+    },
+    {
+        "number": "55",
+        "name": "KURSK",
+        "id": "2431",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9655-kursk.2431/"
+    },
+    {
+        "number": "56",
+        "name": "ARKHANGELSK",
+        "id": "2473",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9656-arkhangelsk.2473/"
+    },
+    {
+        "number": "57",
+        "name": "ORENBURG",
+        "id": "2517",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9657-orenburg.2517/"
+    },
+    {
+        "number": "58",
+        "name": "KIROV",
+        "id": "2518",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9658-kirov.2518/"
+    },
+    {
+        "number": "59",
+        "name": "KEMEROVO",
+        "id": "2599",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9659-kemerovo.2599/"
+    },
+    {
+        "number": "60",
+        "name": "TYUMEN",
+        "id": "2641",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9660-tyumen.2641/"
+    },
+    {
+        "number": "61",
+        "name": "TOLYATTI",
+        "id": "2683",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9661-tolyatti.2683/"
+    },
+    {
+        "number": "62",
+        "name": "IVANOVO",
+        "id": "2716",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9662-ivanovo.2716/"
+    },
+    {
+        "number": "63",
+        "name": "STAVROPOL",
+        "id": "2748",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9663-stavropol.2748/"
+    },
+    {
+        "number": "64",
+        "name": "SMOLENSK",
+        "id": "2780",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9664-smolensk.2780/"
+    },
+    {
+        "number": "65",
+        "name": "PSKOV",
+        "id": "2812",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9665-pskov.2812/"
+    },
+    {
+        "number": "66",
+        "name": "BRYANSK",
+        "id": "2844",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9666-bryansk.2844/"
+    },
+    {
+        "number": "67",
+        "name": "OREL",
+        "id": "2876",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9667-orel.2876/"
+    },
+    {
+        "number": "68",
+        "name": "YAROSLAVL",
+        "id": "2908",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9668-yaroslavl.2908/"
+    },
+    {
+        "number": "69",
+        "name": "BARNAUL",
+        "id": "2940",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9669-barnaul.2940/"
+    },
+    {
+        "number": "70",
+        "name": "LIPETSK",
+        "id": "2972",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9670-lipetsk.2972/"
+    },
+    {
+        "number": "71",
+        "name": "ULYANOVSK",
+        "id": "3004",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9671-ulyanovsk.3004/"
+    },
+    {
+        "number": "72",
+        "name": "YAKUTSK",
+        "id": "3036",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9672-yakutsk.3036/"
+    },
+    {
+        "number": "73",
+        "name": "TAMBOV",
+        "id": "3290",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9673-tambov.3290/"
+    },
+    {
+        "number": "74",
+        "name": "BRATSK",
+        "id": "3325",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9674-bratsk.3325/"
+    },
+    {
+        "number": "75",
+        "name": "ASTRAKHAN",
+        "id": "3360",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9675-astrakhan.3360/"
+    },
+    {
+        "number": "76",
+        "name": "CHITA",
+        "id": "3395",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9676-chita.3395/"
+    },
+    {
+        "number": "77",
+        "name": "KOSTROMA",
+        "id": "3430",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9677-kostroma.3430/"
+    },
+    {
+        "number": "78",
+        "name": "VLADIMIR",
+        "id": "3465",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9678-vladimir.3465/"
+    },
+    {
+        "number": "79",
+        "name": "KALUGA",
+        "id": "3500",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9679-kaluga.3500/"
+    },
+    {
+        "number": "80",
+        "name": "NOVGOROD",
+        "id": "3536",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9680-novgorod.3536/"
+    },
+    {
+        "number": "81",
+        "name": "TAGANROG",
+        "id": "3571",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9681-taganrog.3571/"
+    },
+    {
+        "number": "82",
+        "name": "VOLOGDA",
+        "id": "3606",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9682-vologda.3606/"
+    },
+    {
+        "number": "83",
+        "name": "TVER",
+        "id": "3647",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9683-tver.3647/"
+    },
+    {
+        "number": "84",
+        "name": "TOMSK",
+        "id": "3709",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9684-tomsk.3709/"
+    },
+    {
+        "number": "85",
+        "name": "IZHEVSK",
+        "id": "3748",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9685-izhevsk.3748/"
+    },
+    {
+        "number": "86",
+        "name": "SURGUT",
+        "id": "3781",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9686-surgut.3781/"
+    },
+    {
+        "number": "87",
+        "name": "PODOLSK",
+        "id": "3818",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9687-podolsk.3818/"
+    },
+    {
+        "number": "88",
+        "name": "MAGADAN",
+        "id": "3913",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9688-magadan.3913/"
+    },
+    {
+        "number": "89",
+        "name": "CHEREPOVETS",
+        "id": "3948",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9689-cherepovets.3948/"
+    },
+    {
+        "number": "90",
+        "name": "NORILSK",
+        "id": "3986",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9690-norilsk.3986/"
+    },
+    {
+        "number": "91",
+        "name": "ASTANA",
+        "id": "4022",
+        "url": "/forums/%D0%A1%D0%B5%D1%80%D0%B2%D0%B5%D1%80-%E2%84%9691-astana.4022/"
+    }
+]
